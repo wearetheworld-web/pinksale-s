@@ -1997,6 +1997,7 @@
                               <div style="position: relative">
                                 <input
                                   class="input"
+                                  id="coninp"
                                   type="number"
                                   placeholder="0.0"
                                   value=""
@@ -2022,9 +2023,9 @@
                           </button>
                           <button
                             id="buybox"
+                            class="ant-btn-primary"
                             style="
                               padding: 4px 18px;
-                              color: rgba(0, 0, 0, 0.3);
                               border: none;
                               display: none;
                             "
@@ -2774,6 +2775,7 @@
       let conbut = document.getElementById("conbut");
       let cwbox = document.getElementById("cwbox");
       let buybox = document.getElementById("buybox");
+      let coninp = document.getElementById("coninp");
       function cli(val) {
         if (onis) {
           lis[val].classList.remove("ant-menu-submenu-open");
@@ -2854,7 +2856,7 @@
         };
 
         web3Modal = new Web3Modal({
-          cacheProvider: false, // optional
+          cacheProvider: true, // optional
           providerOptions, // required
           disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
         });
@@ -2871,7 +2873,9 @@
           "..." +
           xhladd.substring(xhladd.length - 4, xhladd.length);
         const rawBalance = await provider.getBalance(xhladd);
-        xethbalance = ethers.utils.formatEther(rawBalance) + " ETH";
+        xethbalance =
+          ethers.utils.formatEther(rawBalance).toString().substring(0, 6) +
+          " ETH";
         console.log(xhladd, xethbalance, xxhladd);
         conbut.style.display = "none";
         spanchild[0].textContent = xxhladd;
@@ -2879,6 +2883,12 @@
         spanls.style.display = "block";
         cwbox.style.display = "none";
         buybox.style.display = "block";
+
+        coninp.value = ethers.utils
+          .formatEther(rawBalance)
+          .toString()
+          .substring(0, 6);
+        console.log(coninp.value);
       }
       function logout() {
         web3Modal.clearCachedProvider();
